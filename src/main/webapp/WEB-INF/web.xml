@@ -3,6 +3,22 @@
 	
 <servlet>
 	<servlet-name>HMS</servlet-name>
-	<servlet-class>lt.baltrimas.lukas.HMS.App</servlet-class>
+	<servlet-class>lt.baltrimas.lukas.Main</servlet-class>
 </servlet>
+
+<servlet-mapping>
+	<servlet-name>HMS</servlet-name>
+	<url-pattern>/add</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>HMS1</servlet-name>
+	<servlet-class>lt.baltrimas.lukas.SqServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>HMS1</servlet-name>
+	<url-pattern>/sq</url-pattern>
+</servlet-mapping>
+
 </web-app>
