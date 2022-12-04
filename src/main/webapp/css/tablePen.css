@@ -1,14 +1,11 @@
-.roomTable_container
+@charset "ISO-8859-1";
+
+div
 {
-	max-width: 50%;
-	padding-right: 20%;
-	padding-top: 15px;
+	display: inline-flex;
 }
-.customerTable_container
+
+table
 {
-	
-}
-.container div
-{
-	display: inline-block;
+	background-color: red;
 }
