@@ -8,8 +8,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.hibernate.service.ServiceRegistry;
 
-import lt.baltrimas.lukas.HMS.Customer;
-import lt.baltrimas.lukas.HMS.Room;
+import lt.baltrimas.lukas.HMS.Entities.Customer;
+import lt.baltrimas.lukas.HMS.Entities.Room;
 
 
 public class Hibernate_config 
@@ -28,7 +28,7 @@ public class Hibernate_config
     Session session = sf.openSession();
 
 	
-	public void saveCustomer(	int id, String first_name, String last_name, String phone, String email, 
+	public void saveCustomer(int id, String first_name, String last_name, String phone, String email, 
 										String country, String city, String adress, Room room)
 	{
 		session.beginTransaction();				
@@ -113,5 +113,14 @@ public class Hibernate_config
 	    session.getTransaction().commit();
 
 		return room;
+	}
+	
+	public void setCustomerToRoom(Room room, Customer customer)
+	{
+		session.beginTransaction();
+		
+		room.setCustomer(customer);
+		
+		session.getTransaction().commit();
 	}
 }

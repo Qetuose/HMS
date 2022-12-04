@@ -1,34 +1,15 @@
 package lt.baltrimas.lukas;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import lt.baltrimas.lukas.HMS.Hibernate.Hibernate_config;
 
-public class Main extends HttpServlet
+public class Main
 {
-	private static final long serialVersionUID = -3357003738985828502L;
-
 	public static void main( String[] args )
     {
+		Hibernate_config hc = new Hibernate_config();
+		
+		hc.setCustomerToRoom(hc.fetchRoom(102), hc.fetchCustomer(3));
 		
     }
-	
-	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException
-	{
-		int i = Integer.parseInt(req.getParameter("num1"));
-		int j = Integer.parseInt(req.getParameter("num2"));
-		
-		int k = j + i;
-		k = k*k;
-		
-		req.setAttribute("k", k);
-		
-		RequestDispatcher rd = req.getRequestDispatcher("sq");
-		rd.forward(req, res);
-	}
 }

@@ -1,0 +1,14 @@
+.roomTable_container
+{
+	max-width: 50%;
+	padding-right: 20%;
+	padding-top: 15px;
+}
+.customerTable_container
+{
+	
+}
+.container div
+{
+	display: inline-block;
+}
